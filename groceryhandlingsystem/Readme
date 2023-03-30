@@ -1,0 +1,37 @@
+Sprint 1
+
+Documentations:
+
+local host port changed to 8089
+	- reasoning : it's occupied by Jenkins, and I don't know how to close it.
+ 
+using MySQL DB with local host with:
+	- MySQL server 
+	- MySQL workbench 8.0.31 instead of the latest
+		- because it will crash on MacOS with m1 chip on Ventura 13.2.1
+		
+Dependencies:
+	- although can be seen in pom.xml, I'm still going to list it here since it's simplified and easy to understand;
+		- Spring Web 		// for obvious reason
+		- Spring DevTool 	// automatically restarts the program when ever we hit save
+		- Spring DATA JPA 	// for Repository Functions like save(), findById(), deleteById(), @Autowired etc.
+		- Lombok 			// java library + Lombok annotations, such as turning things in to Entity etc.
+		- MySQL Driver 		// Cuz I'm using MySQL
+		- Thymeleaf 		// for the front end, make it look nicer.
+		
+Data Source && settings on how to connect to the MySQL is in the application.properties
+ 
+
+ 
+ Note for myself:
+ -----
+ 
+1. variable expression: ${stuff}
+2. select variable expression: *{}
+3. message expression : #{}
+4. Link URL Expression : @{}
+5. Fragment Expression: ~{}
+
+
+Sprint 2
+Bootstrap theme added to make it look normal

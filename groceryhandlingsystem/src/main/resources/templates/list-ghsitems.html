@@ -1,0 +1,61 @@
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+		
+		<title>GHS List Items</title>
+		<!-- copied from Bootstrap 4.0 CSS link -->
+		<link rel="stylesheet" 
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<!-- class= container means a format-->
+		<div class="container">
+			
+
+			<!-- Title -->
+			<h2>GHS List Items</h2>
+			<hr/>
+			
+			<!-- buttons -->						<!-- mb == matching bottom -->
+			<a th:href="@{addItemForm}" class="btn btn-primary mb-2">Add Items</a>
+			
+			<table class="table table-bordered table-striped">
+				
+				<thead>
+					<!-- tr == table row, th == table header -->
+					<tr>
+						<th>Name</th>
+						<th>Exp date(days)</th>
+						<th>Flag(MD)</th>
+						<th>Type</th>
+						<th>Price</th>
+						<th>Destination</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="item: ${item}">
+							<td th:text="${item.name}"></td>
+							<td th:text="${item.expirationDate}"></td>
+							<td th:text="${item.flag}"></td>
+							<td th:text="${item.type}"></td>
+							<td th:text="${item.price}"></td>
+							<td th:text="${item.Destination}"></td>	
+							<td>
+								<a th:href="@{/showUpdateForm(upc=${item.upc})}" class="btn btn-info">Donate/Markdown</a>
+								<a th:href="@{/disposal(upc=${item.upc})}" class="btn btn-danger ml-2">Disposal</a>
+							</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+		
+	</body>
+	
+	
+	
+	
+</html>
