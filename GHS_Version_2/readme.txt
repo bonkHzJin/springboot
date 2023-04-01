@@ -9,7 +9,7 @@ both GHS and GIS package have Eureka Client dependencies
 
 NOTE:
 You DON'T have to add eureka client in your package, 
-it works independently and it's not NECESSARY
+our functional area should works independently and it's not NECESSARY to have Eureka dependency
 
 HOWEVER
 If you installed the Eureka Client, then you must have Eureka Server up
