@@ -6,6 +6,10 @@ it also contains the Eureka server
 
 both GHS and GIS package have Eureka Client dependencies
 
+HOWEVER
+If you installed the Eureka Client, then you must have Eureka Server up
+otherwise it won't run.
+
 NOTE:
 You DON'T have to add eureka client in your package, 
 it works independently and it's not NECESSARY
