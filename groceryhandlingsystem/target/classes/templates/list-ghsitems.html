@@ -20,7 +20,7 @@
 			
 			<!-- buttons -->						<!-- mb == matching bottom -->
 			<a th:href="@{addItemForm}" class="btn btn-primary mb-2">Add Items</a>
-			
+			<a th:href="@{getItems}" class="btn btn-primary mb-2">Request Items From GIS</a>
 			<table class="table table-bordered table-striped">
 				
 				<thead>
@@ -45,7 +45,7 @@
 							<td th:text="${item.price}"></td>
 							<td th:text="${item.Destination}"></td>	
 							<td>
-								<a th:href="@{/showUpdateForm(upc=${item.upc})}" class="btn btn-info">Donate/Markdown</a>
+								<a th:href="@{/showUpdateForm(upc=${item.upc})}" class="btn btn-info">Modify</a>
 								<a th:href="@{/disposal(upc=${item.upc})}" class="btn btn-danger ml-2">Disposal</a>
 							</td>
 					</tr>

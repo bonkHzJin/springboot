@@ -18,6 +18,7 @@ Dependencies:
 		- Lombok 			// java library + Lombok annotations, such as turning things in to Entity etc.
 		- MySQL Driver 		// Cuz I'm using MySQL
 		- Thymeleaf 		// for the front end, make it look nicer.
+		- Eureka Client 	// used for calling method with any package that registered with Eureka
 		
 Data Source && settings on how to connect to the MySQL is in the application.properties
  
@@ -33,5 +34,28 @@ Data Source && settings on how to connect to the MySQL is in the application.pro
 5. Fragment Expression: ~{}
 
 
-Sprint 2
+Thoughts
 Bootstrap theme added to make it look normal
+
+multiple DB example // ignore and just use 1 db with multiple table?
+
+------------
+spring.database-name.list = db1, db2
+
+spring.datasource.db1.url=.......
+spring....username
+spring.....pwd
+spring.....com.mysql.cj.jdbc.Driver 
+
+spring.datasource.db2.url=.......
+spring....username
+spring.....pwd
+spring.....com.mysql.cj.jdbc.Driver 
+
+then make repository for each entity plus "extend JPA<T, ?>
+then create @autowired private repository in the controller
+
+ORRRRRRRRRR
+
+just make individual table per entity
+like @Table(name = "tbl_entity1") etc

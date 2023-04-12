@@ -1,4 +1,4 @@
-package com.swe443.group4.entity;
+package com.swe443.group4.gis.pojo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,26 +10,42 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tbl_GHSitem")
+@Table(name = "tbl_GISitem")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Item {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // this should be generated instead of hand written i think, otherwise, delete this line
 	private Long upc;				// unique identifier
-	// delete the @GeneratedValue if you wanna create item with specific upc
-	
-	
 	private String name;				
 	private String expirationDate;	// kinda hope this is an integer? 
 
 	private Long flag; 				// to not allow items being marked down multiple time
 	private String type; 			// to figure out to dispose or donate or mark down 
 	private Double price;			
-	private String destination;		
+	private String destination;		// maybe won't use?
 	
+	
+	
+	
+	
+	public Item() {
+		super();
+	}
+	
+	public Item(Long upc, String name, String expirationDate, Long flag, String type, Double price,
+			String destination) {
+		super();
+		this.upc = upc;
+		this.name = name;
+		this.expirationDate = expirationDate;
+		this.flag = flag;
+		this.type = type;
+		this.price = price;
+		this.destination = destination;
+	}
 	public Long getUpc() {
 		return upc;
 	}
@@ -73,6 +89,5 @@ public class Item {
 		this.destination = destination;
 	}
 
-	
 	
 }
