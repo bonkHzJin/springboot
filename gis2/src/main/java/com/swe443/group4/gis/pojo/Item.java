@@ -20,7 +20,7 @@ public class Item {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // this should be generated instead of hand written i think, otherwise, delete this line
 	private Long upc;				// unique identifier
 	private String name;				
-	private String expirationDate;	// kinda hope this is an integer? 
+	private Long expirationDate;	// kinda hope this is an integer? 
 
 	private Long flag; 				// to not allow items being marked down multiple time
 	private String type; 			// to figure out to dispose or donate or mark down 
@@ -35,7 +35,7 @@ public class Item {
 		super();
 	}
 	
-	public Item(Long upc, String name, String expirationDate, Long flag, String type, Double price,
+	public Item(Long upc, String name, Long expirationDate, Long flag, String type, Double price,
 			String destination) {
 		super();
 		this.upc = upc;
@@ -58,10 +58,10 @@ public class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getExpirationDate() {
+	public Long getExpirationDate() {
 		return expirationDate;
 	}
-	public void setExpirationDate(String expirationDate) {
+	public void setExpirationDate(Long expirationDate) {
 		this.expirationDate = expirationDate;
 	}
 	public Long getFlag() {

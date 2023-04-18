@@ -22,9 +22,9 @@ public class MyController {
 	@RequestMapping("/test")
 	public List<Item> getItems(){
 		List<Item> list = new ArrayList<>();
-		list.add( new Item(996L, "Pizza", "43",1L,"1",1.2,"CharityGroup1"));
-		list.add( new Item(233L, "Darth", "67",0L,"1",2.2,null));
-		list.add( new Item(666L, "Fries", "26",0L,"1",5.2,"somewhere in Africa"));
+		list.add( new Item(996L, "Pizza", 43L,1L,"1",1.2,"CharityGroup1"));
+		list.add( new Item(233L, "Darth", 68L,0L,"1",2.2,null));
+		list.add( new Item(666L, "Fries", 26L,0L,"1",5.2,"somewhere in Africa"));
 		return list;
 	}
 	

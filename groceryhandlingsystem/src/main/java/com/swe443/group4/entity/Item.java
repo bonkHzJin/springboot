@@ -23,7 +23,7 @@ public class Item {
 	
 	
 	private String name;				
-	private String expirationDate;	// kinda hope this is an integer? 
+	private Long expirationDate;	// kinda hope this is an integer? 
 
 	private Long flag; 				// to not allow items being marked down multiple time
 	private String type; 			// to figure out to dispose or donate or mark down 
@@ -42,10 +42,11 @@ public class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getExpirationDate() {
+
+	public Long getExpirationDate() {
 		return expirationDate;
 	}
-	public void setExpirationDate(String expirationDate) {
+	public void setExpirationDate(Long expirationDate) {
 		this.expirationDate = expirationDate;
 	}
 	public Long getFlag() {
