@@ -1,5 +1,6 @@
 package com.swe443.group4.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,10 +144,13 @@ public class ItemGHSController {
 	 * @return
 	 */
 	@SuppressWarnings("null")
-	@GetMapping("/forDaniel")
+	@RequestMapping("/markedDownItems")
+	//Changed to handle request for data
+	@ResponseBody
 	public List<Item> forGIS(){
 		List<Item> tmpList = IRepo.findAll();
-		List<Item> forReturn = null;
+		//changed the initialize array
+		List<Item> forReturn =  new ArrayList<Item>();
 		for (Item it : tmpList) {
 			if (it.getFlag() >= 1) {
 				forReturn.add(it);

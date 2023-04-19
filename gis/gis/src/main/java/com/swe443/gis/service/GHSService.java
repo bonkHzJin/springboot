@@ -1,4 +1,4 @@
-package com.swe443.group4.service;
+package com.swe443.gis.service;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.swe443.group4.entity.Item;
+import com.swe443.gis.entity.Item;
 
 /**
  * the plan was to just save it directly into the DB
@@ -36,7 +36,7 @@ import com.swe443.group4.entity.Item;
  *
  */
 @Service
-public class GISService {
+public class GHSService {
 	
 	@Autowired
 	private LoadBalancerClient loadBalancerClient;
@@ -44,25 +44,20 @@ public class GISService {
 	/**
 	 * this method calls method from other springboot package 
 	 * that can be found on the Eureka Server
-	 * @return list of items obtained from GIS
-	 */
-	@RequestMapping("/test1")
+	 * @return list of items obtained from GHS
+	*/
 	public List<Item> getItems(){
 		// Service Instance Object is packing basic service info such as :
 		// IP, Port, etc.
-		ServiceInstance si = this.loadBalancerClient.choose("Inventory-SERVICE");
+		ServiceInstance si = this.loadBalancerClient.choose("GHS-SERVICE");
 		StringBuffer sb = new StringBuffer();
 		
 		// set up the link
-		// FIXME : change the /test in the string buffer once the REAL GIS is finished
-		sb.append("http://").append(si.getHost()).append(":").append(si.getPort()).append("/getGisItems");
-		// same as sb = http://localhost:????/test
+		sb.append("http://").append(si.getHost()).append(":").append(si.getPort()).append("/markedDownItems");
 		
 		//use springMVC Rest Template
 		RestTemplate rt = new RestTemplate();
 		
-		
-		// don't ask me how this works, idk either
 		ParameterizedTypeReference <List<Item>> type = new ParameterizedTypeReference<List<Item>>() {};
 		ResponseEntity<List<Item>> response = rt.exchange(sb.toString(),HttpMethod.GET,null, type);
 		

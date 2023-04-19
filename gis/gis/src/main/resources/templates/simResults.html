@@ -1,0 +1,35 @@
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+		
+		<title>Expire Simulation</title>
+		<!-- copied from Bootstrap 4.0 CSS link -->
+		<link rel="stylesheet" 
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<!-- class= container means a format-->
+		<div class="container">
+			
+			<h1>Expire Simulation</h1>
+			<hr/>
+			
+			<form th:action="@{/expireSimulation}" method="POST">
+				<a>Days to Simulate</a>
+				<input type="number" name="simuDays" placeholder="Enter # Days to Simulate" class="form-control col-4 mb-4" min="1" max="10" required/>	
+				<button class="btn btn-primary" type="submit">Run Simulation</button>
+			</form>
+			
+			<span th:text="${simuDayStatus}"/>
+			
+			<hr/> <!-- hr/ == horizontal line -->
+			
+			<a th:href="@{/showGISItems}">Show GIS Items</a>
+			
+		</div>
+		
+	</body>
+
+</html>
