@@ -2,6 +2,8 @@
 FOLDER: groceryhandlingsystem 
 description: version 1 
 
-FOLDER: GHS_Version_2 // ignore this one, its outdated
-description: version 1 but with microservices and transfers URL+DATA via Eureka.
+Ghsversion2 folder has been deleted, since we aren't gonna use it anymore.
+
+
+both ghs and gis has been tested and microservices are working properly.
 
